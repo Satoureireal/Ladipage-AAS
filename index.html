@@ -61,7 +61,7 @@
             </div>
 
             <!-- Section 4: Khối 4 Tính năng nổi bật -->
-            <div class="row g-5 mb-0">
+            <div class="row g-5 mb-0" id="feature-boxes">
                 <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature text-center">
                         <div class="icon mb-3"><img src="./assets/images/analysis.png" alt="img" style="width: 80px; height: auto;"></div>
@@ -235,7 +235,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUvPTs3aVGbRa4w1TitTgbdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <!-- <h3 style="padding-bottom:5px;">SÓNG SÁNG</h3> -->
+                                <h3 style="padding-bottom:5px;">SÓNG SÁNG</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Chuẩn bị trước giờ mở cửa</span>
                             </div>
                             <blockquote>
@@ -253,7 +253,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUshtcsnYatoalqb-5IFuo89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <!-- <h3 style="padding-bottom:5px;">BỮA TRƯA BÊN BẢNG ĐIỆN</h3> -->
+                                <h3 style="padding-bottom:5px;">BỮA TRƯA BÊN BẢNG ĐIỆN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Điều chỉnh chiến lược ngay trong phiên</span>
                             </div>
                             <blockquote>
@@ -271,7 +271,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUuYl24QbXdQPdhx7znDwA9f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <!-- <h3 style="padding-bottom:5px;">TRÀ CHIỀU CHỨNG KHOÁN</h3> -->
+                                <h3 style="padding-bottom:5px;">TRÀ CHIỀU CHỨNG KHOÁN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Giải mã dòng tiền sau khi thị trường đóng cửa</span>
                             </div>
                             <blockquote>
@@ -289,7 +289,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUtd7hBGY8Hqc9s0_3eHFF7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <!--<h3 style="padding-bottom:5px;">TIÊU ĐIỂM TUẦN</h3>-->
+                                <h3 style="padding-bottom:5px;">TIÊU ĐIỂM TUẦN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Tổng kết một tuần giao dịch &amp; đọc vị xu hướng tuần giao dịch mới</span>
                             </div>
                             <blockquote>
@@ -440,14 +440,14 @@
     <script>
         window.addEventListener('scroll', function() {
             var scrollIcon = document.getElementById('scrollDownIcon');
-            if (!scrollIcon) return;
+            var featureSection = document.getElementById('feature-boxes');
+            if (!scrollIcon || !featureSection) return;
             
-            // Tính toán vị trí cuộn so với chiều cao toàn trang
-            var scrollPosition = window.innerHeight + window.scrollY;
-            var pageHeight = document.documentElement.scrollHeight;
+            // Lấy vị trí của phần 4 box tính năng so với khung hình hiện tại
+            var rect = featureSection.getBoundingClientRect();
             
-            // Nếu cách đáy trang dưới 100px thì ẩn icon đi
-            if (scrollPosition >= pageHeight - 100) {
+            // Nếu phần 4 box tính năng đã cuộn vào trong màn hình (cách mép dưới 150px) thì ẩn icon đi
+            if (rect.top <= window.innerHeight - 150) {
                 scrollIcon.classList.add('hidden');
             } else {
                 scrollIcon.classList.remove('hidden');
