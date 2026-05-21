@@ -18,15 +18,15 @@
     <!-- Phần Hero Banner: Ảnh bìa to trên cùng -->
     <!-- Đặt ảnh full width, hiển thị cover (object-fit) để không bị méo ảnh -->
     <div class="">
-        <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/banner.webp" alt="img">
+        <img style="width: 100%; height: auto; object-fit: cover; display: block;" src="./assets/images/banner.webp" alt="img">
     </div>
 
     <!-- Phần Live Streaming: Nhúng video Youtube và các tính năng phụ trợ -->
     <!-- Section 2: Chứa Iframe Youtube, 4 khối tính năng và nút Kêu gọi hành động (Call to Action) -->
-    <div class="section pt-0 section-2">
+    <div class="section section-2">
     <div class="container">
 
-        <div class="row justify-content-center" style="margin: 3rem 0;">
+        <div class="row justify-content-center" style="margin: 1.5rem 0;">
             <div class="col-lg-10">
                 <div class="img-wrap" data-aos="fade-up">
                     <!-- Iframe nhúng danh sách phát YouTube (videoseries). Sử dụng bo góc 16px và đổ bóng (box-shadow) -->
@@ -44,41 +44,9 @@
             </div>
         </div>
 
-            <!-- Khối 4 Tính năng nổi bật: Dùng Bootstrap Grid (col-lg-3) và AOS fade-up tạo hiệu ứng cuộn -->
-            <div class="row g-5">
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <!-- Inline CSS: Dùng dải màu Linear Gradient xanh lá cho thẻ tính năng, bo góc 30px -->
-                    <div class="feature" style="background: linear-gradient(90deg,rgba(40, 159, 40, 1) 0%, rgba(8, 100, 8, 1) 100%); -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; color: #fff;">
-                        <div class="icon"><img src="./assets/images/analysis.png" alt="img"></div>
-                        <h3>Phân tích chuyên sâu</h3>
-                        <p style="font-size: 15px;">diễn biến thị trường, cập nhật nhanh chóng.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature" style="background: linear-gradient(90deg,rgba(40, 159, 40, 1) 0%, rgba(8, 100, 8, 1) 100%); -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; color: #fff;">
-                        <div class="icon"><img src="./assets/images/connect.png" alt="img"></div>
-                        <h3>Kết nối trực tiếp</h3>
-                        <p style="font-size: 15px;">đội ngũ chuyên gia giàu kinh nghiệm.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature" style="background: linear-gradient(90deg,rgba(40, 159, 40, 1) 0%, rgba(8, 100, 8, 1) 100%); -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; color: #fff;">
-                        <div class="icon"><img src="./assets/images/companion.png" alt="img"></div>
-                        <h3>Đồng hành</h3>
-                        <p style="font-size: 15px;">trong mọi quyết định giao dịch của nhà đầu tư.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature" style="background: linear-gradient(90deg,rgba(40, 159, 40, 1) 0%, rgba(8, 100, 8, 1) 100%); -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; color: #fff;">
-                        <div class="icon"><img src="./assets/images/exploit.png" alt="img"></div>
-                        <h3>Khai thác hiệu quả</h3>
-                        <p style="font-size: 15px;">các công cụ đầu tư chuyên biệt của AAS.</p>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Section 3: Lịch Livestream + CTA -->
             <!-- Hình ảnh Lịch Livestream trải dài -->
-            <div class="row mb-5" style="margin-top: 50px;"><img src="./assets/images/calendar.png" alt="img" style="width: 100%;"></div>
+            <div class="row mb-4"><img src="./assets/images/calendar.png" alt="img" style="width: 100%;" data-aos="fade-up"></div>
             <!-- Nút Kêu gọi hành động (Call To Action - Tham gia Zalo) -->
             <div class="row text-center mb-5" data-aos="fade-up">
                 <div class="col-12 mx-auto text-center">
@@ -87,12 +55,43 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Section 4: Khối 4 Tính năng nổi bật -->
+            <div class="row g-5 mb-0">
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature text-center">
+                        <div class="icon mb-3"><img src="./assets/images/analysis.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <h3>Phân tích chuyên sâu</h3>
+                        <p>diễn biến thị trường, cập nhật nhanh chóng.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature text-center">
+                        <div class="icon mb-3"><img src="./assets/images/connect.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <h3>Kết nối trực tiếp</h3>
+                        <p>đội ngũ chuyên gia giàu kinh nghiệm.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature text-center">
+                        <div class="icon mb-3"><img src="./assets/images/companion.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <h3>Đồng hành</h3>
+                        <p>trong mọi quyết định giao dịch của nhà đầu tư.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature text-center">
+                        <div class="icon mb-3"><img src="./assets/images/exploit.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <h3>Khai thác hiệu quả</h3>
+                        <p>các công cụ đầu tư chuyên biệt của AAS.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Phần Đội ngũ Lãnh đạo và Chuyên gia tư vấn (Leadership) 
-         Xây dựng dựa trên các thẻ Service nằm ngang (hoặc xếp dọc trên màn hình Mobile) -->
-    <div class="section section-3">
+    <!-- Phần Đội ngũ Lãnh đạo và Chuyên gia tư vấn (Leadership) -->
+    <div class="section pt-0 section-3">
         <div class="container">
             <div class="row text-center mb-4" data-aos="fade-up">
                 <div class="col-lg-6 mx-auto text-center">
@@ -134,7 +133,7 @@
                             <div class="service d-flex">
                                 <div class="text">
                                     <h2 style="font-size: 1.2rem; font-weight: 700;">Ông HOÀNG ANH NHẬT</h2>
-                                    <h3>GĐ Khối KH Cao cấp TVĐT1 tại AAS</h3>
+                                    <h3>Giám đốc Khối Khách hàng cao cấp 1 AAS</h3>
                                     <p style="font-size: 16px;">15 năm kinh nghiệm đầu tư và tư  vấn quản lý danh mục. Hỗ trợ hơn 1000 khách hàng đầu tư hiệu quả. Quan điểm đầu tư bám sát thị trường.</p>
                                 </div>
                                 <div>
@@ -145,7 +144,7 @@
                             <div class="service d-flex">
                                 <div class="text">
                                     <h2 style="font-size: 1.2rem; font-weight: 700;">Ông LÊ THÀNH TRUNG</h2>
-                                    <h3>GĐ Khối KH Cao cấp TVĐT tại AAS</h3>
+                                    <h3>Giám đốc Khối Khách hàng cao cấp AAS</h3>
                                     <p style="font-size: 16px;">10 năm kinh nghiệm tư vấn đầu tư. Top 1 môi giới tư với doanh thu cao nhất khu vực miền Bắc. Cá nhân hóa chiến lược đầu tư, xây dựng danh mục bền vững và tối ưu hóa rủi ro.</p>
                                 </div>
                                 <div>
@@ -157,7 +156,7 @@
                             <div class="service d-flex">
                                 <div class="text">
                                     <h2 style="font-size: 1.2rem; font-weight: 700;">Bà TRẦN THANH MAI</h2>
-                                    <h3>GĐ Tư vấn Tài chính AAS</h3>
+                                    <h3>Giám đốc Tư vấn Tài chính AAS</h3>
                                     <p style="font-size: 16px;">15 năm kinh nghiệm tư vấn tài chính. Xây dựng lộ trình tài chính dài hạn và tối ưu hóa hiệu suất đầu tư.</p>
                                 </div>
                                 <div>
@@ -168,7 +167,7 @@
                             <div class="service d-flex">
                                 <div class="text">
                                     <h2 style="font-size: 1.2rem; font-weight: 700;">Ông PHẠM TÙNG BÁCH</h2>
-                                    <h3>Phó phòng TT Phân tích AAS</h3>
+                                    <h3>Phó phòng Trung tâm Phân tích AAS</h3>
                                     <p style="font-size: 16px;">Hơn 5 năm kinh nghiệm phân tích đầu tư. Kiến thức được chuẩn hóa theo CFA. Thế mạnh phân tích vĩ mô và phân bổ đa lớp tài sản với góc nhìn thực tế, thẳng thắn và trực diện.</p>
                                 </div>
                                 <div>
@@ -198,12 +197,11 @@
          Sử dụng thư viện Tiny Slider (class="testimonial-slider") để tạo hiệu ứng kéo trượt -->
     <div class="section">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="0">
-                    <h1 class="heading mb-3"><img src="./assets/images/playlist.png" alt="img"></h1>
+            <div class="row mb-4">
+                <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <h1 class="heading mb-3"><img src="./assets/images/playlist.png" alt="Playlist livestream" style="max-width: 100%; height: auto;"></h1>
                 </div>
             </div>
-
             <!-- Khu vực chứa Slider và Thanh điều hướng Custom (Cụm SVG Mũi tên Trái/Phải) -->
             <div class="testimonial-slider-wrap" data-aos="fade-up" data-aos-delay="100">
                 <div id="testimonial-nav">
@@ -233,7 +231,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUvPTs3aVGbRa4w1TitTgbdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">SÓNG SÁNG</h3>
+                                <!-- <h3 style="padding-bottom:5px;">SÓNG SÁNG</h3> -->
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Chuẩn bị trước giờ mở cửa</span>
                             </div>
                             <blockquote>
@@ -251,7 +249,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUshtcsnYatoalqb-5IFuo89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">BỮA TRƯA BÊN BẢNG ĐIỆN</h3>
+                                <!-- <h3 style="padding-bottom:5px;">BỮA TRƯA BÊN BẢNG ĐIỆN</h3> -->
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Điều chỉnh chiến lược ngay trong phiên</span>
                             </div>
                             <blockquote>
@@ -269,7 +267,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUuYl24QbXdQPdhx7znDwA9f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">TRÀ CHIỀU CHỨNG KHOÁN</h3>
+                                <!-- <h3 style="padding-bottom:5px;">TRÀ CHIỀU CHỨNG KHOÁN</h3> -->
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Giải mã dòng tiền sau khi thị trường đóng cửa</span>
                             </div>
                             <blockquote>
@@ -287,7 +285,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUtd7hBGY8Hqc9s0_3eHFF7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">TIÊU ĐIỂM TUẦN</h3>
+                                <!--<h3 style="padding-bottom:5px;">TIÊU ĐIỂM TUẦN</h3>-->
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Tổng kết một tuần giao dịch &amp; đọc vị xu hướng tuần giao dịch mới</span>
                             </div>
                             <blockquote>
@@ -305,7 +303,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUuSaNm5UjBKRLjnm3dLsbH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">SEMINAR: TOÀN CẢNH THỊ TRƯỜNG</h3>
+                                <!--<h3 style="padding-bottom:5px;">SEMINAR: TOÀN CẢNH THỊ TRƯỜNG</h3>-->
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Góc nhìn chiến lược dài hạn</span>
                             </div>
                             <blockquote>
