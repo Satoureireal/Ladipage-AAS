@@ -2000,6 +2000,27 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
 }
 
+/* Hiệu ứng Icon Scroll Down */
+.scroll-down-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #fff;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.scroll-down-icon:hover {
+    opacity: 1;
+    color: #FDC221;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
 /* Giao diện cho Điện thoại di động (Mobile - ngang nhỏ hơn 767px) */
 @media (max-width: 767.98px) {
   /* Thu gọn thêm khoảng cách giữa các phần */
@@ -2129,6 +2150,97 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     .section .row.mb-5 h1.heading {
         font-size: 22px !important;
     }
+}
+
+/* Hiệu ứng Icon Scroll Down Fixed */
+.scroll-down-icon {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: #086408;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+}
+.scroll-down-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.scroll-down-icon:hover {
+    background-color: #0a7a0a;
+    color: #FDC221;
+}
+.scroll-down-icon.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Hiệu ứng quả chuông rung liên tục */
+.bell-icon-animate {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #dc3545; /* Màu đỏ nổi bật */
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.bell-icon-animate svg {
+    transform-origin: 50% 10%; /* Lấy đỉnh quả chuông làm tâm lắc */
+    animation: ring 1.5s infinite ease-in-out; /* infinite giúp lặp lại liên tục */
+}
+@keyframes ring {
+    0%, 100% { transform: rotate(0); }
+    10% { transform: rotate(25deg); }
+    20% { transform: rotate(-25deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    70% { transform: rotate(0); }
+}
+
+/* Hiệu ứng quả chuông rung */
+.bell-icon-animate {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #dc3545; /* Màu đỏ nổi bật */
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: ring 2s infinite ease-in-out;
+}
+@keyframes ring {
+    0%, 35%, 100% { transform: rotate(0); }
+    5%, 25% { transform: rotate(15deg); }
+    10%, 30% { transform: rotate(-15deg); }
+    15% { transform: rotate(20deg); }
+    20% { transform: rotate(-20deg); }
 }
 
 /* Giao diện cho Điện thoại cỡ nhỏ (Small Mobile - ngang nhỏ hơn 480px) */
