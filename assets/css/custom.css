@@ -1,0 +1,544 @@
+/* CÁC THAY ĐỔI TÙY CHỈNH (CUSTOM OVERRIDES) */
+/* Đã ẩn gạch chân màu vàng mặc định dưới các tiêu đề (Heading) */
+.heading {
+    position: relative;
+    padding-bottom: 0;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    color: #105031;
+}
+.heading::after {
+    display: none !important;
+}
+.heading.text-center::after {
+    display: none !important;
+}
+.heading .highlight {
+    font-weight: 900;
+    color: inherit;
+}
+.heading:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 4px 10px rgba(8, 100, 8, 0.2));
+}
+
+/* Đồng bộ kích thước các ảnh tiêu đề (trừ quà tặng) */
+.section-title-img {
+    height: 60px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain;
+}
+
+/* Hiệu ứng gạch chân màu vàng cho tiêu đề */
+.yellow-line {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+.yellow-line::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #FDC221;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+/* Font chữ cách điệu The Nautigal */
+.subtitle-nautigal {
+    font-family: 'The Nautigal', cursive !important;
+    font-size: 50px;
+    color: #105031;
+    line-height: 1;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Hiệu ứng nền chứng khoán mờ ảo chuyển động (Animated Stock Background) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../images/bg-stocks.png') repeat;
+    background-size: 600px;
+    opacity: 0.03;
+    z-index: -10;
+    pointer-events: none;
+    animation: moveBg 80s linear infinite;
+}
+@keyframes moveBg {
+    0% { background-position: 0 0; }
+    100% { background-position: -600px 600px; }
+}
+
+/* Ép toàn trang sử dụng font chữ SF Pro Display (Global Font) */
+body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Sửa lỗi hiển thị ảnh trên Carousel (Slideshow) */
+.carousel-inner {
+    overflow: hidden;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;
+}
+.carousel-item:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+/* Cài đặt hiển thị và hiệu ứng ảnh bên trong Slider Playlist */
+.testimonial-v2 .author img {
+    transform: none;
+    transform-origin: center center;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    border-radius: 12px;
+}
+.testimonial-v2:hover .author img {
+    transform: scale(1.05);
+    filter: brightness(1.05) drop-shadow(0 8px 20px rgba(8, 100, 8, 0.15));
+}
+
+/* Hiệu ứng ảnh cho phần Lãnh đạo/Chuyên gia */
+.service img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+.service:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.12));
+}
+
+/* Hiệu ứng cho icon Tính năng nổi bật */
+.feature .icon img {
+    transition: transform 0.4s ease;
+}
+.feature:hover .icon img {
+    transform: scale(1.1) translateY(-3px);
+}
+
+/* Label cho tiêu đề Playlist Livestream */
+.playlist-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #086408;
+    color: #fff !important;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+}
+.testimonial-v2 .author-name h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 15px !important;
+}
+.playlist-label.label-red {
+    background-color: #dc3545;
+}
+
+/* Đảm bảo iframe (YouTube) tự động scale theo tỷ lệ 16:9 trên mọi thiết bị */
+.img-wrap iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+}
+
+/* ========================================
+   CẤU HÌNH GIAO DIỆN DI ĐỘNG (RESPONSIVE MOBILE DESIGN)
+   ======================================== */
+
+/* Giao diện cho Máy tính bảng (Tablet - ngang nhỏ hơn 991px) */
+@media (max-width: 991.98px) {
+  /* Giảm khoảng cách padding chung của các section để tối ưu không gian */
+    .section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+  /* Ép các cột chiếm toàn bộ chiều rộng 100% trên Tablet */
+    .col-lg-1 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+  /* Danh sách tính năng (Features): Hiển thị 2 thẻ/hàng (50% chiều rộng mỗi thẻ) */
+    .row.g-5 > .col-lg-3 {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+  /* Phần Đội ngũ Lãnh đạo: Giữ cấu trúc ngang (row) nhưng thu nhỏ */
+    .service.d-flex {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        gap: 20px;
+    }
+  /* Thu nhỏ kích thước ảnh chuyên gia */
+    .service.d-flex img {
+        max-width: 140px;
+        margin: 0;
+    }
+    .service .text {
+        order: 0;
+    }
+    .service.d-flex > div:last-child {
+        order: 1;
+    }
+
+  /* Ép các khối Banner Quà Tặng thành 1 cột xếp chồng (chiếm 100% chiều rộng) */
+    .section.bg-light .row.justify-content-between .col-lg-5,
+    .section.bg-light .row.justify-content-between .col-lg-6 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+  /* Kéo 2 mũi tên điều hướng Playlist Slider lại gần nhau hơn */
+    #testimonial-nav .prev {
+        left: -30px !important;
+    }
+    #testimonial-nav .next {
+        right: -30px !important;
+    }
+}
+
+/* Hiệu ứng Icon Scroll Down */
+.scroll-down-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #fff;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.scroll-down-icon:hover {
+    opacity: 1;
+    color: #FDC221;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+/* Giao diện cho Điện thoại di động (Mobile - ngang nhỏ hơn 767px) */
+@media (max-width: 767.98px) {
+  /* Thu gọn thêm khoảng cách giữa các phần */
+    .section {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+  /* Tự động thu nhỏ kích thước chữ tiêu đề chính xuống 24px */
+    .heading {
+        font-size: 24px !important;
+    }
+    .heading.mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+
+  /* Điều chỉnh tiêu đề và gạch vàng trên mobile */
+    .subtitle-nautigal {
+        font-size: 38px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .yellow-line::after {
+        bottom: 2px;
+        height: 6px;
+    }
+
+  /* Giảm bớt các khoảng cách lề (margin) quá lớn của Bootstrap trên di động */
+    .mb-5 {
+        margin-bottom: 1.5rem !important;
+    }
+    .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+    .row.justify-content-between {
+        margin: 1.5rem 0 !important;
+    }
+
+  /* Thu nhỏ ảnh tiêu đề trên thiết bị di động */
+    .section-title-img {
+        height: 35px !important;
+    }
+
+  /* Cấu trúc hiển thị 2 khối tính năng trên 1 hàng */
+    .row.g-5 > .col-lg-3 {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        margin-bottom: 15px;
+        padding-left: 7.5px !important;
+        padding-right: 7.5px !important;
+    }
+    .row.g-5 {
+        --bs-gutter-x: 0 !important;
+        --bs-gutter-y: 0 !important;
+        margin-left: -7.5px;
+        margin-right: -7.5px;
+    }
+
+  /* Điều chỉnh khoảng cách bên trong (padding) cho các khối tính năng */
+    .feature {
+        padding: 15px 10px !important;
+        margin-bottom: 0;
+        height: 100%;
+    }
+    .feature .icon img {
+        width: 50px !important;
+    }
+    .feature h3 {
+        font-size: 15px !important;
+    }
+
+  /* Xóa padding thừa ở phía trên banner */
+    .section-2 {
+        padding-top: 0 !important;
+    }
+
+  /* Đảm bảo ảnh Lịch livestream hiển thị tự co dãn 100% không bị tràn */
+    .row.mb-5 img[src*="calendar"] {
+        width: 100%;
+        height: auto;
+    }
+
+  /* Căn lại lề và thu nhỏ tiêu đề phần quà tặng */
+    .section.bg-light h1.heading {
+        margin: 1rem 0 !important;
+        font-size: 22px !important;
+    }
+
+  /* Ẩn cụm nút điều hướng của 2 Carousel cuối trên thiết bị di động */
+    .carousel-nav-arrows {
+        display: none !important;
+    }
+
+  /* Ẩn hoàn toàn nút chuyển trang playlist (màn hình nhỏ sẽ tự hỗ trợ vuốt chạm) */
+    #testimonial-nav {
+        display: none !important;
+    }
+
+  /* Điều chỉnh font chữ đoạn mô tả đánh giá nhỏ lại */
+    .testimonial-v2 blockquote {
+        font-size: 14px !important;
+    }
+    .testimonial-v2 .author-name h3 {
+        font-size: 14px !important;
+    }
+
+  /* Ép cấu trúc đội ngũ chuyên gia 1 bên text, 1 bên ảnh trên mobile */
+    .service.d-flex {
+        flex-direction: row;
+        text-align: left;
+        padding: 15px;
+        align-items: center;
+        gap: 15px;
+    }
+    .service.d-flex img {
+        max-width: 100px;
+        margin: 0;
+    }
+    .service .text h2 {
+        font-size: 1rem !important;
+    }
+    .service .text p {
+        font-size: 14px !important;
+    }
+
+  /* Làm bo góc đều cho toàn bộ ảnh trong các Slideshow */
+    .carousel-item img {
+        border-radius: 10px !important;
+    }
+    .carousel-inner {
+        border-radius: 10px !important;
+    }
+
+  /* Tự động tính toán chiều cao ảnh Liên hệ chân trang (Footer) */
+    .row > img[src*="footer"] {
+        height: auto;
+    }
+
+  /* Giảm lề trái/phải tổng thể của trang web trên di động */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+  /* Ép toàn bộ các nút bấm (Buttons) bung rộng toàn màn hình (100% width) */
+    .btn.btn-primary {
+        font-size: 14px;
+        padding: 10px 20px;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+  /* Thu nhỏ hình ảnh tiêu đề ở các mục Danh sách phát, Quà tặng */
+    .heading > img {
+        max-width: 200px;
+    }
+
+    .section .row.mb-5 h1.heading {
+        font-size: 22px !important;
+    }
+}
+
+/* Hiệu ứng Icon Scroll Down Fixed */
+.scroll-down-icon {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: #086408;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+}
+.scroll-down-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.scroll-down-icon:hover {
+    background-color: #0a7a0a;
+    color: #FDC221;
+}
+.scroll-down-icon.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Hiệu ứng quả chuông rung liên tục */
+.bell-icon-animate {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #dc3545; /* Màu đỏ nổi bật */
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.bell-icon-animate svg {
+    transform-origin: 50% 10%; /* Lấy đỉnh quả chuông làm tâm lắc */
+    animation: ring 1.5s infinite ease-in-out; /* infinite giúp lặp lại liên tục */
+}
+@keyframes ring {
+    0%, 100% { transform: rotate(0); }
+    10% { transform: rotate(25deg); }
+    20% { transform: rotate(-25deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    70% { transform: rotate(0); }
+}
+
+/* Hiệu ứng quả chuông rung */
+.bell-icon-animate {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #dc3545; /* Màu đỏ nổi bật */
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: ring 2s infinite ease-in-out;
+}
+@keyframes ring {
+    0%, 35%, 100% { transform: rotate(0); }
+    5%, 25% { transform: rotate(15deg); }
+    10%, 30% { transform: rotate(-15deg); }
+    15% { transform: rotate(20deg); }
+    20% { transform: rotate(-20deg); }
+}
+
+/* Giao diện cho Điện thoại cỡ nhỏ (Small Mobile - ngang nhỏ hơn 480px) */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 20px !important;
+    }
+
+  /* Thu nhỏ chữ nội dung khối tính năng một lần nữa */
+    .feature h3 {
+        font-size: 14px !important;
+    }
+    .feature p {
+        font-size: 12px !important;
+    }
+    .feature .icon img {
+        width: 40px !important;
+    }
+
+  /* Ảnh đại diện chuyên gia nhỏ lại tối đa */
+    .service.d-flex img {
+        max-width: 80px;
+        margin: 0;
+    }
+
+  /* Tắt hiệu ứng phóng to ảnh khi ấn giữ trên màn hình bé */
+    .testimonial-v2 .author img {
+        transform: none;
+    }
+
+  /* Thu nhỏ nhãn và tiêu đề trên màn hình bé */
+    .playlist-label {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+
+  /* Khoảng cách nhỏ nhất có thể ở các khối */
+    .section {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+/* Các class tiện ích và thư viện gộp chung */
+.mr-2 { margin-right: 0.5rem !important; }
+.ml-auto { margin-left: auto !important; }
+.tns-outer{padding:0 !important}.tns-outer [hidden]{display:none !important}.tns-outer [aria-controls],.tns-outer [data-action]{cursor:pointer}.tns-slider{-webkit-transition:all 0s;-moz-transition:all 0s;transition:all 0s}.tns-slider>.tns-item{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.tns-horizontal.tns-subpixel{white-space:nowrap}.tns-horizontal.tns-subpixel>.tns-item{display:inline-block;vertical-align:top;white-space:normal}.tns-horizontal.tns-no-subpixel:after{content:'';display:table;clear:both}.tns-horizontal.tns-no-subpixel>.tns-item{float:left}.tns-horizontal.tns-carousel.tns-no-subpixel>.tns-item{margin-right:-100%}.tns-no-calc{position:relative;left:0}.tns-gallery{position:relative;left:0;min-height:1px}.tns-gallery>.tns-item{position:absolute;left:-100%;-webkit-transition:transform 0s, opacity 0s;-moz-transition:transform 0s, opacity 0s;transition:transform 0s, opacity 0s}.tns-gallery>.tns-slide-active{position:relative;left:auto !important}.tns-gallery>.tns-moving{-webkit-transition:all 0.25s;-moz-transition:all 0.25s;transition:all 0.25s}.tns-autowidth{display:inline-block}.tns-lazy-img{-webkit-transition:opacity 0.6s;-moz-transition:opacity 0.6s;transition:opacity 0.6s;opacity:0.6}.tns-lazy-img.tns-complete{opacity:1}.tns-ah{-webkit-transition:height 0s;-moz-transition:height 0s;transition:height 0s}.tns-ovh{overflow:hidden}.tns-visually-hidden{position:absolute;left:-10000em}.tns-transparent{opacity:0;visibility:hidden}.tns-fadeIn{opacity:1;filter:alpha(opacity=100);z-index:0}.tns-normal,.tns-fadeOut{opacity:0;filter:alpha(opacity=0);z-index:-1}.tns-vpfix{white-space:nowrap}.tns-vpfix>div,.tns-vpfix>li{display:inline-block}.tns-t-subp2{margin:0 auto;width:310px;position:relative;height:10px;overflow:hidden}.tns-t-ct{width:2333.3333333%;width:-webkit-calc(100% * 70 / 3);width:-moz-calc(100% * 70 / 3);width:calc(100% * 70 / 3);position:absolute;right:0}.tns-t-ct:after{content:'';display:table;clear:both}.tns-t-ct>div{width:1.4285714%;width:-webkit-calc(100% / 70);width:-moz-calc(100% / 70);width:calc(100% / 70);height:10px;float:left}
+[data-aos][data-aos][data-aos-duration="50"],body[data-aos-duration="50"] [data-aos]{transition-duration:50ms}[data-aos][data-aos][data-aos-delay="50"],body[data-aos-delay="50"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="50"].aos-animate,body[data-aos-delay="50"] [data-aos].aos-animate{transition-delay:50ms}[data-aos][data-aos][data-aos-duration="100"],body[data-aos-duration="100"] [data-aos]{transition-duration:.1s}[data-aos][data-aos][data-aos-delay="100"],body[data-aos-delay="100"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="100"].aos-animate,body[data-aos-delay="100"] [data-aos].aos-animate{transition-delay:.1s}[data-aos][data-aos][data-aos-duration="200"],body[data-aos-duration="200"] [data-aos]{transition-duration:.2s}[data-aos][data-aos][data-aos-delay="200"],body[data-aos-delay="200"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="200"].aos-animate,body[data-aos-delay="200"] [data-aos].aos-animate{transition-delay:.2s}[data-aos][data-aos][data-aos-duration="300"],body[data-aos-duration="300"] [data-aos]{transition-duration:.3s}[data-aos][data-aos][data-aos-delay="300"],body[data-aos-delay="300"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="300"].aos-animate,body[data-aos-delay="300"] [data-aos].aos-animate{transition-delay:.3s}[data-aos][data-aos][data-aos-duration="400"],body[data-aos-duration="400"] [data-aos]{transition-duration:.4s}[data-aos][data-aos][data-aos-delay="400"],body[data-aos-delay="400"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="400"].aos-animate,body[data-aos-delay="400"] [data-aos].aos-animate{transition-delay:.4s}[data-aos][data-aos][data-aos-duration="500"],body[data-aos-duration="500"] [data-aos]{transition-duration:.5s}[data-aos][data-aos][data-aos-delay="500"],body[data-aos-delay="500"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="500"].aos-animate,body[data-aos-delay="500"] [data-aos].aos-animate{transition-delay:.5s}[data-aos][data-aos][data-aos-duration="700"],body[data-aos-duration="700"] [data-aos]{transition-duration:.7s}[data-aos][data-aos][data-aos-delay="700"],body[data-aos-delay="700"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="700"].aos-animate,body[data-aos-delay="700"] [data-aos].aos-animate{transition-delay:.7s}[data-aos][data-aos][data-aos-duration="800"],body[data-aos-duration="800"] [data-aos]{transition-duration:.8s}[data-aos][data-aos][data-aos-delay="800"],body[data-aos-delay="800"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="800"].aos-animate,body[data-aos-delay="800"] [data-aos].aos-animate{transition-delay:.8s}[data-aos][data-aos][data-aos-duration="1000"],body[data-aos-duration="1000"] [data-aos]{transition-duration:1s}[data-aos][data-aos][data-aos-delay="1000"],body[data-aos-delay="1000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="1000"].aos-animate,body[data-aos-delay="1000"] [data-aos].aos-animate{transition-delay:1s}[data-aos][data-aos][data-aos-duration="2000"],body[data-aos-duration="2000"] [data-aos]{transition-duration:2s}[data-aos][data-aos][data-aos-delay="2000"],body[data-aos-delay="2000"] [data-aos]{transition-delay:0}[data-aos][data-aos][data-aos-delay="2000"].aos-animate,body[data-aos-delay="2000"] [data-aos].aos-animate{transition-delay:2s}[data-aos][data-aos][data-aos-easing=ease],body[data-aos-easing=ease] [data-aos]{transition-timing-function:ease}[data-aos][data-aos][data-aos-easing=ease-out],body[data-aos-easing=ease-out] [data-aos]{transition-timing-function:ease-out}[data-aos^=fade][data-aos^=fade]{opacity:0;transition-property:opacity,transform}[data-aos^=fade][data-aos^=fade].aos-animate{opacity:1;transform:translateZ(0)}[data-aos=fade-up]{transform:translate3d(0,100px,0)}[data-aos=fade-left]{transform:translate3d(100px,0,0)}[data-aos^=slide][data-aos^=slide]{transition-property:transform}[data-aos^=slide][data-aos^=slide].aos-animate{transform:translateZ(0)}[data-aos^=flip][data-aos^=flip]{backface-visibility:hidden;transition-property:transform}

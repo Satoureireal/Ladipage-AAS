@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <!-- Site CSS -->
     <link rel="stylesheet" href="./assets/css/style(1).css?v=3">
+    <link rel="stylesheet" href="./assets/css/custom.css?v=3">
 
     <title>AAS</title>
 </head>
@@ -17,7 +18,10 @@
     <!-- Phần Hero Banner: Ảnh bìa to trên cùng -->
     <!-- Đặt ảnh full width, hiển thị cover (object-fit) để không bị méo ảnh -->
     <div>
-        <img style="width: 100%; height: auto; object-fit: cover; display: block;" src="./assets/images/banner.webp" alt="img">
+        <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/banner%20mobile.webp">
+            <img style="width: 100%; height: auto; object-fit: cover; display: block;" src="./assets/images/banner.webp" alt="img">
+        </picture>
     </div>
 
     <!-- Phần Live Streaming: Nhúng video Youtube và các tính năng phụ trợ -->
@@ -44,8 +48,19 @@
         </div>
 
             <!-- Section 3: Lịch Livestream + CTA -->
+            <!-- Tiêu đề Lịch Livestream -->
+            <div class="row mb-4">
+                <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <h1 class="heading mb-3"><span class="yellow-line">Lịch xem</span> livestream</h1>
+                </div>
+            </div>
             <!-- Hình ảnh Lịch Livestream trải dài -->
-            <div class="row mb-4"><img src="./assets/images/calendar.png" alt="img" style="width: 100%;" data-aos="fade-up"></div>
+            <div class="row mb-4">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./assets/images/calendar_MOBILE.png">
+                    <img src="./assets/images/calendar.png" alt="img" style="width: 100%;" data-aos="fade-up">
+                </picture>
+            </div>
             <!-- Nút Kêu gọi hành động (Call To Action - Tham gia Zalo) -->
             <div class="row text-center mb-5" data-aos="fade-up">
                 <div class="col-12 mx-auto text-center">
@@ -98,8 +113,8 @@
     <div class="section pt-0 section-3">
         <div class="container">
             <div class="row text-center mb-4" data-aos="fade-up">
-                <div class="col-lg-6 mx-auto text-center">
-                    <h2 class="heading mb-4"><img style="width: 100%; height: 100%;" src="./assets/images/leadership.png"></h2>
+                <div class="col-lg-12 mx-auto text-center">
+                        <h2 class="heading mb-4">Đồng hành cùng <span class="yellow-line">đội ngũ chuyên gia</span></h2>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -203,7 +218,7 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="0">
-                    <h1 class="heading mb-3"><img src="./assets/images/playlist.png" alt="Playlist livestream" style="max-width: 100%; height: auto;"></h1>
+                        <h1 class="heading mb-3"><span class="yellow-line">Playlist</span> livestream</h1>
                 </div>
             </div>
             <!-- Khu vực chứa Slider và Thanh điều hướng Custom (Cụm SVG Mũi tên Trái/Phải) -->
@@ -235,7 +250,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUvPTs3aVGbRa4w1TitTgbdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">SÓNG SÁNG</h3>
+                                <h3 style="padding-bottom:5px;"><span class="playlist-label">Thứ 2</span> SÓNG SÁNG</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Chuẩn bị trước giờ mở cửa</span>
                             </div>
                             <blockquote>
@@ -253,7 +268,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUshtcsnYatoalqb-5IFuo89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">BỮA TRƯA BÊN BẢNG ĐIỆN</h3>
+                                <h3 style="padding-bottom:5px;"><span class="playlist-label">Thứ 3</span> BỮA TRƯA BÊN BẢNG ĐIỆN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Điều chỉnh chiến lược ngay trong phiên</span>
                             </div>
                             <blockquote>
@@ -271,7 +286,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUuYl24QbXdQPdhx7znDwA9f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">TRÀ CHIỀU CHỨNG KHOÁN</h3>
+                                <h3 style="padding-bottom:5px;"><span class="playlist-label">Thứ 4, 5</span> TRÀ CHIỀU CHỨNG KHOÁN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Giải mã dòng tiền sau khi thị trường đóng cửa</span>
                             </div>
                             <blockquote>
@@ -289,7 +304,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUtd7hBGY8Hqc9s0_3eHFF7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">TIÊU ĐIỂM TUẦN</h3>
+                                <h3 style="padding-bottom:5px;"><span class="playlist-label">Thứ 6</span> TIÊU ĐIỂM TUẦN</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Tổng kết một tuần giao dịch &amp; đọc vị xu hướng tuần giao dịch mới</span>
                             </div>
                             <blockquote>
@@ -307,7 +322,7 @@
                                 <!-- <iframe src="https://www.youtube.com/embed/videoseries?list=PL1GiuIvn0lUuSaNm5UjBKRLjnm3dLsbH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 12px;"></iframe> -->
                             </div>
                             <div class="author-name" style="padding: 15px 0;">
-                                <h3 style="padding-bottom:5px;">SEMINAR: TOÀN CẢNH THỊ TRƯỜNG</h3>
+                                <h3 style="padding-bottom:5px;"><span class="playlist-label label-red">Hàng tháng</span> SEMINAR: TOÀN CẢNH THỊ TRƯỜNG</h3>
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Góc nhìn chiến lược dài hạn</span>
                             </div>
                             <blockquote>
@@ -324,11 +339,12 @@
     <div class="section bg-light">
         <div class="container">
 
-            <div class="row justify-content-between" style="margin: 3rem 0;">
-                <div class="col-lg-5">
-                    <h1 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">
-                        <img src="./assets/images/gift.png" alt="Xem livestream" style="max-width: 100%; height: auto;">
+            <div class="row justify-content-between align-items-center" style="margin: 3rem 0;">
+                <div class="col-lg-5 text-start">
+                    <h1 class="heading mb-0" data-aos="fade-up" data-aos-delay="100">
+                        <span class="yellow-line">Xem</span> livestream
                     </h1>
+                    <div class="subtitle-nautigal" data-aos="fade-up" data-aos-delay="200">Nhận quà mỏi tay</div>
                 </div>
                 <div class="col-lg-7">
                     <div class="img-wrap" data-aos="fade-left">
@@ -344,7 +360,7 @@
                 </div>
             </div>
             <!-- Cụm Nút Điều Hướng Trái/Phải của Carousel Quà Tặng -->
-            <div class="d-flex justify-content-center align-items-center mt-3" style="gap: 30px;">
+            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-3" style="gap: 30px;">
                 <button type="button" class="nav-arrow" data-bs-target="#carouselGift" data-bs-slide="prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -369,7 +385,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-lg-12" data-aos="fade-up" data-aos-delay="0">
-                    <h1 class="heading mb-3"><img src="./assets/images/talk.png" alt="Nhà đầu tư nói gì về các phiên livestream của AAS" style="max-width: 100%; height: auto;"></h1>
+                        <h1 class="heading mb-3"><span class="yellow-line">Nhà đầu tư</span> nói gì về các phiên livestream của AAS?</h1>
                 </div>
             </div>
 
@@ -390,16 +406,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Nút đè lên slide góc dưới chính giữa -->
-                <div style="position: absolute; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: center; z-index: 20; pointer-events: none;">
-                    <div style="pointer-events: auto;">
-                        <a href="#section-2" class="btn btn-primary" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5); white-space: nowrap;">Xem ngay Livestream</a>
-                    </div>
-                </div>
             </div>
             <!-- Cụm Nút Điều Hướng Trái/Phải của Carousel Đánh giá -->
-            <div class="d-flex justify-content-center align-items-center mt-3" style="gap: 30px;">
+            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-4" style="gap: 30px; margin-bottom: 30px;">
                 <button type="button" class="nav-arrow" data-bs-target="#carouselTalk" data-bs-slide="prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -410,6 +419,11 @@
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
                 </button>
+            </div>
+
+            <!-- Nút Xem ngay Livestream tách khỏi ảnh -->
+            <div class="text-center mt-5 mb-5" style="padding-top: 15px;">
+                <a href="#section-2" class="btn btn-primary" style="box-shadow: 0 4px 15px rgba(0,0,0,0.5); white-space: nowrap;">Xem ngay Livestream</a>
             </div>
 
             </div>
