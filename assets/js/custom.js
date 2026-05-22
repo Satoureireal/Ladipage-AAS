@@ -13,6 +13,7 @@
 
 		var loader = document.querySelector('.loader');
 		var overlay = document.getElementById('overlayer');
+		if (!loader || !overlay) return;
 
 		function fadeOut(el) {
 			el.style.opacity = 1;
