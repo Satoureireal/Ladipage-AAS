@@ -433,7 +433,10 @@
 
     <!-- Phần Chân trang (Footer): Chứa ảnh liên hệ -->
     <div class="row">
-        <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/footer.webp" alt="img">
+        <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/footer_mb.webp">
+            <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/footer.webp" alt="img">
+        </picture>
     </div>
 
     <!-- Nút Scroll Down cố định -->
