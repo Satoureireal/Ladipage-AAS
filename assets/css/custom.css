@@ -558,3 +558,52 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     transform: none !important;
     filter: none !important;
 }
+
+/* ========================================
+   TÙY CHỈNH PAGINATION DOTS (SLIDESHOW)
+   ======================================== */
+.tns-nav {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 10;
+}
+.tns-nav button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: #d3d3d3;
+    border: none;
+    transition: all 0.3s ease;
+}
+.tns-nav button.tns-nav-active {
+    background: #086408; /* Bắt màu xanh chủ đạo của theme */
+    width: 24px;         /* Tạo hiệu ứng viên nhộng khi active */
+    border-radius: 5px;
+}
+.tns-nav button:hover {
+    background: #0a7a0a;
+}
+
+/* Thu nhỏ Pagination Dots trên thiết bị di động */
+@media (max-width: 767.98px) {
+    .tns-nav button {
+        width: 6px;
+        height: 6px;
+        margin: 0 3px;
+    }
+    .tns-nav button.tns-nav-active {
+        width: 16px;
+    }
+}
+
+/* Căn giữa theo chiều dọc, ngang hàng với ảnh slide Quà tặng trên bản Web */
+@media (min-width: 992px) {
+    .section.bg-light .row.justify-content-between > .col-lg-5 {
+        /* Kéo khối chữ lên để bù trừ chiều cao của chấm điều hướng và mũi tên, giúp chữ nằm ngang bằng tâm bức ảnh */
+        transform: translateY(-45px);
+    }
+}

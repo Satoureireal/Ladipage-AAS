@@ -13,7 +13,7 @@
 
     <title>AAS</title>
 </head>
-<body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+<body data-aos-easing="slide" data-aos-duration="500" data-aos-delay="0">
 
     <!-- Phần Hero Banner: Ảnh bìa to trên cùng -->
     <!-- Đặt ảnh full width, hiển thị cover (object-fit) để không bị méo ảnh -->
@@ -340,11 +340,11 @@
         <div class="container">
 
             <div class="row justify-content-between align-items-center" style="margin: 1.5rem 0;">
-                <div class="col-lg-5 text-start">
-                    <h1 class="heading mb-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-5 text-start" style="align-content: center;">
+                    <h1 class="heading mb-0">
                         <span class="yellow-line">Xem</span> livestream
                     </h1>
-                    <div class="subtitle-nautigal" data-aos="fade-up" data-aos-delay="200">Nhận quà mỏi tay</div>
+                    <div class="subtitle-nautigal">Nhận quà mỏi tay</div>
                 </div>
                 <div class="col-lg-7">
                     <div class="img-wrap" data-aos="fade-left">
@@ -402,7 +402,7 @@
     <div class="section">
         <div class="container">
             <div class="row mb-3">
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="0">
+                <div class="col-lg-12">
                         <h1 class="heading mb-3"><span class="yellow-line">Nhà đầu tư</span> nói gì về các phiên livestream của AAS?</h1>
                 </div>
             </div>
@@ -509,7 +509,8 @@
                         speed: 400,
                         controls: true,
                         controlsContainer: '#gift-nav',
-                        nav: false,
+                        nav: true,
+                        navPosition: 'bottom',
                         gutter: 16
                     });
                 }
@@ -526,7 +527,8 @@
                         speed: 400,
                         controls: true,
                         controlsContainer: '#talk-nav',
-                        nav: false,
+                        nav: true,
+                        navPosition: 'bottom',
                         gutter: 16
                     });
                 }
