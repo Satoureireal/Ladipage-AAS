@@ -214,7 +214,7 @@
 
     <!-- Phần Danh sách phát (Playlist) các chuyên mục Livestream
          Sử dụng thư viện Tiny Slider (class="testimonial-slider") để tạo hiệu ứng kéo trượt -->
-    <div class="section">
+    <div class="section" style="padding-bottom: 0;">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -254,7 +254,7 @@
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Chuẩn bị trước giờ mở cửa</span>
                             </div>
                             <blockquote>
-                                <p style="font-style: italic;">Bản tin đầu này dành cho các nhà đầu tư trước khi bước vào phiên giao dịch. Chương trình giúp tổng hợp nhanh diễn biến phiên trước, tin tức vĩ mô quan trọng và các tín hiệu kỹ thuật để xây dựng kế hoạch giao dịch cho phiên sắp diễn ra.</p>
+                                <p style="font-style: italic;">Bản tin đầu ngày dành cho các nhà đầu tư trước khi bước vào phiên giao dịch. Chương trình giúp tổng hợp nhanh diễn biến phiên trước, tin tức vĩ mô quan trọng và các tín hiệu kỹ thuật để xây dựng kế hoạch giao dịch cho phiên sắp diễn ra.</p>
                             </blockquote>
                         </div>
                     </div>
@@ -326,7 +326,7 @@
                                 <span style="color:#212529;font-size:16px !important;font-weight:600;">Góc nhìn chiến lược dài hạn</span>
                             </div>
                             <blockquote>
-                                <p style="font-style: italic;">Cập nhật bức tranh toàn diện về thị trường tài chính và chứng khoán trong nước và quốc tế. Phân tích các yếu tố vĩ mô và dòng tiền đang dẫn dắt xu hướng thị trường. Nhận diện nhóm ngành và cơ hội đầu tư nổi bật trong giai đoạn tiếp theo. Đưa ra kịch bản thị trường và chiến lược phân bổ tài sản cho nhà đầu tư</p>
+                                <p style="font-style: italic;">Cập nhật bức tranh toàn diện về thị trường tài chính và chứng khoán trong nước và quốc tế. Phân tích các yếu tố vĩ mô và dòng tiền đang dẫn dắt xu hướng thị trường. Nhận diện nhóm ngành và cơ hội đầu tư trong giai đoạn tiếp theo. Đưa ra kịch bản thị trường và chiến lược phân bổ tài sản cho nhà đầu tư</p>
                             </blockquote>
                         </div>
                     </div>
@@ -336,10 +336,10 @@
         </div>
     </div>
     <!-- Khu vực Carousel Quà Tặng (Màu Nền Sáng) -->
-    <div class="section bg-light">
+    <div class="section bg-light" style="padding-top: 1rem;">
         <div class="container">
 
-            <div class="row justify-content-between align-items-center" style="margin: 3rem 0;">
+            <div class="row justify-content-between align-items-center" style="margin: 1.5rem 0;">
                 <div class="col-lg-5 text-start">
                     <h1 class="heading mb-0" data-aos="fade-up" data-aos-delay="100">
                         <span class="yellow-line">Xem</span> livestream
@@ -348,25 +348,25 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="img-wrap" data-aos="fade-left">
-                        <!-- Khởi tạo Bootstrap Carousel. data-bs-ride="carousel" cho phép tự động phát, độ trễ 3000ms -->
-                        <div style="overflow:hidden;" id="carouselGift" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-inner" style="border-radius: 15px;">
-                    <div class="carousel-item active">
-                        <img style="width: 100%; border-radius: 15px;" src="./assets/images/01.png" class="d-block w-100" alt="img">
-                    </div>
-                    <div class="carousel-item">
-                        <img style="width: 100%; border-radius: 15px;" src="./assets/images/02.png" class="d-block w-100" alt="img">
-                    </div>
-                </div>
-            </div>
+                        <!-- Sử dụng Tiny Slider cho Quà Tặng -->
+                        <div class="gift-slider-wrapper" style="overflow:hidden; border-radius: 15px;">
+                            <div class="gift-slider" id="gift-slider">
+                                <div class="item">
+                                    <img style="width: 100%; border-radius: 15px;" src="./assets/images/01.png" class="d-block w-100" alt="img">
+                                </div>
+                                <div class="item">
+                                    <img style="width: 100%; border-radius: 15px;" src="./assets/images/02.png" class="d-block w-100" alt="img">
+                                </div>
+                            </div>
+                        </div>
             <!-- Cụm Nút Điều Hướng Trái/Phải của Carousel Quà Tặng -->
-            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-3" style="gap: 30px;">
-                <button type="button" class="nav-arrow" data-bs-target="#carouselGift" data-bs-slide="prev">
+            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-3" style="gap: 30px;" id="gift-nav">
+                <button type="button" class="nav-arrow prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>
-                <button type="button" class="nav-arrow" data-bs-target="#carouselGift" data-bs-slide="next">
+                <button type="button" class="nav-arrow next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
@@ -390,31 +390,31 @@
             </div>
 
             <div style="position: relative;">
-                <div style="overflow:hidden; border-radius: 15px;" id="carouselTalk" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="3000">
-                    <div class="carousel-inner" style="border-radius: 15px;">
-                        <div class="carousel-item active">
+                <div class="talk-slider-wrapper" style="overflow:hidden; border-radius: 15px;">
+                    <div class="talk-slider" id="talk-slider">
+                        <div class="item">
                             <img style="width: 100%; border-radius: 15px;" src="./assets/images/01.jpg" class="d-block w-100" alt="img">
                         </div>
-                        <div class="carousel-item">
+                        <div class="item">
                             <img style="width: 100%; border-radius: 15px;" src="./assets/images/02.jpg" class="d-block w-100" alt="img">
                         </div>
-                        <div class="carousel-item">
+                        <div class="item">
                             <img style="width: 100%; border-radius: 15px;" src="./assets/images/03.jpg" class="d-block w-100" alt="img">
                         </div>
-                        <div class="carousel-item">
+                        <div class="item">
                             <img style="width: 100%; border-radius: 15px;" src="./assets/images/04.jpg" class="d-block w-100" alt="img">
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Cụm Nút Điều Hướng Trái/Phải của Carousel Đánh giá -->
-            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-4" style="gap: 30px; margin-bottom: 30px;">
-                <button type="button" class="nav-arrow" data-bs-target="#carouselTalk" data-bs-slide="prev">
+            <div class="carousel-nav-arrows d-flex justify-content-center align-items-center mt-4" style="gap: 30px; margin-bottom: 30px;" id="talk-nav">
+                <button type="button" class="nav-arrow prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>
-                <button type="button" class="nav-arrow" data-bs-target="#carouselTalk" data-bs-slide="next">
+                <button type="button" class="nav-arrow next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
@@ -432,7 +432,7 @@
     </div>
 
     <!-- Phần Chân trang (Footer): Chứa ảnh liên hệ -->
-    <div class="row">
+    <div class="row m-0">
         <picture>
             <source media="(max-width: 767px)" srcset="./assets/images/footer_mb.webp">
             <img style="width: 100%; height: 100%; object-fit: cover;" src="./assets/images/footer.webp" alt="img">
@@ -471,5 +471,46 @@
         });
     </script>
 
+
+    <!-- Khởi tạo Tiny Slider cho Quà tặng và Đánh giá -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof tns !== 'undefined') {
+                if (document.querySelector('#gift-slider')) {
+                    tns({
+                        container: '#gift-slider',
+                        items: 1,
+                        slideBy: 'page',
+                        autoplay: true,
+                        autoplayButtonOutput: false,
+                        mouseDrag: true,
+                        swipeAngle: false,
+                        speed: 400,
+                        controls: true,
+                        controlsContainer: '#gift-nav',
+                        nav: false,
+                        gutter: 16
+                    });
+                }
+
+                if (document.querySelector('#talk-slider')) {
+                    tns({
+                        container: '#talk-slider',
+                        items: 1,
+                        slideBy: 'page',
+                        autoplay: true,
+                        autoplayButtonOutput: false,
+                        mouseDrag: true,
+                        swipeAngle: false,
+                        speed: 400,
+                        controls: true,
+                        controlsContainer: '#talk-nav',
+                        nav: false,
+                        gutter: 16
+                    });
+                }
+            }
+        });
+    </script>
 
 </body></html>
