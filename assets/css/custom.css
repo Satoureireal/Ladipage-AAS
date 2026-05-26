@@ -708,14 +708,16 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 /* So le (staggered) vị trí từ trên xuống dưới */
 .talk-slider .box-1 { top: 5%; transition-delay: 0.1s; }   /* Box trên phải */
 .talk-slider .box-2 { top: 40%; transition-delay: 0.25s; } /* Box giữa phải */
-.talk-slider .box-3 { top: 35%; transition-delay: 0.55s; } /* Box giữa trái (nhiều chữ) */
+.talk-slider .box-3 { top: 45%; transition-delay: 0.55s; } /* Box giữa trái (nhiều chữ) */
 .talk-slider .box-4 { top: 75%; transition-delay: 0.4s; }  /* Box dưới phải */
+.talk-slider .box-5 { top: 2%; transition-delay: 0.2s; }   /* Box trên trái (mới) */
 
 /* Delay nhịp nhàng cho animation lơ lửng */
 .talk-slider .box-1 .float-box-anim { animation-delay: 0s; }
 .talk-slider .box-2 .float-box-anim { animation-delay: 0.5s; }
 .talk-slider .box-3 .float-box-anim { animation-delay: 1.5s; }
 .talk-slider .box-4 .float-box-anim { animation-delay: 1.0s; }
+.talk-slider .box-5 .float-box-anim { animation-delay: 0.8s; }
 
 /* KÍCH HOẠT ANIMATION KHI SLIDE XUẤT HIỆN (.tns-slide-active) */
 .tns-slide-active .float-box {
@@ -757,14 +759,14 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     .talk-slider .cmt-avatar {
         width: 16px;
         height: 16px;
-        font-size: 9px;
+        font-size: 8px;
         margin-right: 4px;
     }
     .talk-slider .cmt-name {
-        font-size: 9px; /* Chữ nhỏ lại, hài hòa với box */
+        font-size: 8px; /* Chữ nhỏ lại, hài hòa với box */
     }
     .talk-slider .cmt-text {
-        font-size: 9px;
+        font-size: 8px;
         line-height: 1.2;
     }
     .talk-slider .float-box:hover .float-box-anim {
