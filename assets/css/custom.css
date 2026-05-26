@@ -383,7 +383,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
 
   /* Tự động tính toán chiều cao ảnh Liên hệ chân trang (Footer) */
-    .row img[src*="footer"] {
+    .container-fluid img[src*="footer"], footer img[src*="footer"] {
         height: auto;
     }
 
