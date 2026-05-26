@@ -732,40 +732,43 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 /* Thu nhỏ trên Mobile */
 @media (max-width: 767.98px) {
     .talk-slider .talk-slide-content {
-        margin: 25px 90px 25px 70px; /* Cập nhật lề trái 70px, phải 90px cho box to hơn */
+        margin: 20px 60px 20px 50px; /* Cập nhật lề để hình ảnh to ra một chút */
     }
     .talk-slider .left-box,
     .talk-slider .right-box {
-        width: 180px; 
-        min-height: 50px;
+        width: 130px; /* Nhỏ lại để box gọn gàng hơn */
+        min-height: 40px;
     }
     .talk-slider .left-box {
-        left: -45px; 
+        left: -30px; 
     }
     .talk-slider .right-box {
-        right: -45px;
+        right: -30px;
     }
     .talk-slider .float-box-anim {
-        padding: 2px; /* Giảm padding để viền không bị quá dày so với ảnh nhỏ */
-        border-radius: 8px;
-        border-width: 1px; /* Viền mỏng lại trên mobile */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.12); /* Giảm độ tỏa bóng mặc định */
+        padding: 4px; 
+        border-radius: 6px;
+        border-width: 1px; 
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* Giảm bóng đổ */
+    }
+    .talk-slider .cmt-header {
+        margin-bottom: 3px;
     }
     .talk-slider .cmt-avatar {
-        width: 20px;
-        height: 20px;
-        font-size: 11px;
-        margin-right: 6px;
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+        margin-right: 4px;
     }
     .talk-slider .cmt-name {
-        font-size: 12px;
+        font-size: 9px; /* Chữ nhỏ lại, hài hòa với box */
     }
     .talk-slider .cmt-text {
-        font-size: 12px;
-        line-height: 1.3;
+        font-size: 9px;
+        line-height: 1.2;
     }
     .talk-slider .float-box:hover .float-box-anim {
         transform: scale(1.04) !important; /* Zoom nhẹ hơn trên mobile để tránh tràn */
-        box-shadow: 0 6px 15px rgba(8, 100, 8, 0.2); /* Giảm độ tỏa bóng khi hover để vừa lề 50px */
+        box-shadow: 0 4px 10px rgba(8, 100, 8, 0.2);
     }
 }
