@@ -607,3 +607,163 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
         transform: translateY(-45px);
     }
 }
+
+/* ========================================
+   HIỆU ỨNG BOX NỔI CHO TALK SLIDER
+   ======================================== */
+/* Đảm bảo lề trái an toàn tối thiểu (120px) do box đã to hơn, tăng lề phải để căn trái */
+.talk-slider .talk-slide-content {
+    margin: 45px 190px 45px 120px;
+    position: relative;
+}
+
+/* Hình ảnh chính */
+.talk-slide-content > img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Khối nổi chung - Định dạng vị trí và hoạt ảnh ra vào */
+.talk-slider .float-box {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: auto;
+}
+
+/* Lớp bọc bên trong để tạo chuyển động lơ lửng liên tục */
+.talk-slider .float-box-anim {
+    background: #fff;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    animation: floatUpDown 4s ease-in-out infinite;
+    height: auto;
+    border: 2px solid transparent; /* Chuẩn bị cho viền hover */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.talk-slider .cmt-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.talk-slider .cmt-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.talk-slider .cmt-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.talk-slider .cmt-text {
+    font-size: 15px;
+    color: #212529;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Hiệu ứng Hover - Phóng to, tạo viền màu và dừng bay */
+.talk-slider .float-box:hover .float-box-anim {
+    transform: scale(1.08) !important; /* Zoom nhẹ nhàng mượt mà hơn */
+    box-shadow: 0 15px 35px rgba(8, 100, 8, 0.25);
+    border-color: #086408; /* Viền màu xanh lục đồng bộ */
+    animation-play-state: paused;
+}
+
+/* Kích thước chung cho 4 Box chữ nhật */
+.talk-slider .left-box,
+.talk-slider .right-box {
+    width: 340px; /* Tăng 30% từ 264px */
+    min-height: 90px;
+}
+
+/* Vị trí thụt ra ngoài ảnh: 85px đúng bằng 1/4 của 340px */
+.talk-slider .left-box {
+    left: -85px; 
+    transform: translateX(-40px) scale(0.9);
+}
+.talk-slider .right-box {
+    right: -85px;
+    transform: translateX(40px) scale(0.9);
+}
+
+/* So le (staggered) vị trí từ trên xuống dưới */
+.talk-slider .box-1 { top: 30%; transition-delay: 0.1s; }  /* Box giữa trái */
+.talk-slider .box-2 { top: 8%; transition-delay: 0.25s; }  /* Box trên phải */
+.talk-slider .box-4 { top: 55%; transition-delay: 0.4s; }  /* Box dưới phải */
+
+/* Delay nhịp nhàng cho animation lơ lửng */
+.talk-slider .box-1 .float-box-anim { animation-delay: 0s; }
+.talk-slider .box-2 .float-box-anim { animation-delay: 0.5s; }
+.talk-slider .box-4 .float-box-anim { animation-delay: 1.0s; }
+
+/* KÍCH HOẠT ANIMATION KHI SLIDE XUẤT HIỆN (.tns-slide-active) */
+.tns-slide-active .float-box {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Keyframes lơ lửng */
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Thu nhỏ trên Mobile */
+@media (max-width: 767.98px) {
+    .talk-slider .talk-slide-content {
+        margin: 25px 90px 25px 70px; /* Cập nhật lề trái 70px, phải 90px cho box to hơn */
+    }
+    .talk-slider .left-box,
+    .talk-slider .right-box {
+        width: 180px; 
+        min-height: 50px;
+    }
+    .talk-slider .left-box {
+        left: -45px; 
+    }
+    .talk-slider .right-box {
+        right: -45px;
+    }
+    .talk-slider .float-box-anim {
+        padding: 2px; /* Giảm padding để viền không bị quá dày so với ảnh nhỏ */
+        border-radius: 8px;
+        border-width: 1px; /* Viền mỏng lại trên mobile */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12); /* Giảm độ tỏa bóng mặc định */
+    }
+    .talk-slider .cmt-avatar {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+        margin-right: 6px;
+    }
+    .talk-slider .cmt-name {
+        font-size: 12px;
+    }
+    .talk-slider .cmt-text {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    .talk-slider .float-box:hover .float-box-anim {
+        transform: scale(1.04) !important; /* Zoom nhẹ hơn trên mobile để tránh tràn */
+        box-shadow: 0 6px 15px rgba(8, 100, 8, 0.2); /* Giảm độ tỏa bóng khi hover để vừa lề 50px */
+    }
+}
