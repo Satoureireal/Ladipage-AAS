@@ -117,10 +117,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 }
 
 /* Hiệu ứng ảnh cho phần Lãnh đạo/Chuyên gia */
-.service img {
+.experts-grid .service img {
     transition: transform 0.4s ease, filter 0.4s ease;
 }
-.service:hover img {
+.experts-grid .service:hover img {
     transform: scale(1.05);
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.12));
 }
@@ -164,6 +164,14 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     aspect-ratio: 16 / 9;
 }
 
+/* Lưới chuyên gia đồng bộ chiều cao */
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
+}
+
 /* ========================================
    CẤU HÌNH GIAO DIỆN DI ĐỘNG (RESPONSIVE MOBILE DESIGN)
    ======================================== */
@@ -183,6 +191,11 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
         max-width: 100% !important;
     }
 
+  /* Lưới chuyên gia cho tablet và di động chuyển về 1 cột */
+    .experts-grid {
+        grid-template-columns: 1fr;
+    }
+
   /* Danh sách tính năng (Features): Hiển thị 2 thẻ/hàng (50% chiều rộng mỗi thẻ) */
     .row.g-5 > .col-lg-3 {
         width: 50% !important;
@@ -191,21 +204,21 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
 
   /* Phần Đội ngũ Lãnh đạo: Giữ cấu trúc ngang (row) nhưng thu nhỏ */
-    .service.d-flex {
+    .experts-grid .service.d-flex {
         flex-direction: row;
         text-align: left;
         align-items: center;
         gap: 20px;
     }
   /* Thu nhỏ kích thước ảnh chuyên gia */
-    .service.d-flex img {
+    .experts-grid .service.d-flex img {
         max-width: 140px;
         margin: 0;
     }
-    .service .text {
+    .experts-grid .service .text {
         order: 0;
     }
-    .service.d-flex > div:last-child {
+    .experts-grid .service.d-flex > div:last-child {
         order: 1;
     }
 
@@ -356,21 +369,21 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
 
   /* Ép cấu trúc đội ngũ chuyên gia 1 bên text, 1 bên ảnh trên mobile */
-    .service.d-flex {
+    .experts-grid .service.d-flex {
         flex-direction: row;
         text-align: left;
         padding: 15px;
         align-items: center;
         gap: 15px;
     }
-    .service.d-flex img {
+    .experts-grid .service.d-flex img {
         max-width: 100px;
         margin: 0;
     }
-    .service .text h2 {
+    .experts-grid .service .text h2 {
         font-size: 1rem !important;
     }
-    .service .text p {
+    .experts-grid .service .text p {
         font-size: 14px !important;
     }
 
@@ -521,7 +534,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
 
   /* Ảnh đại diện chuyên gia nhỏ lại tối đa */
-    .service.d-flex img {
+    .experts-grid .service.d-flex img {
         max-width: 80px;
         margin: 0;
     }
