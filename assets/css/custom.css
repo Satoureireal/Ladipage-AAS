@@ -828,9 +828,8 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 }
 .footer-logo img {
     display: block;
-    width: 150px;
+    width: 140px;
     height: auto;
-    filter: brightness(0) invert(1);
 }
 .footer-contact {
     display: grid;
