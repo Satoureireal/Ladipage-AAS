@@ -9,7 +9,7 @@
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <!-- Site CSS -->
     <link rel="stylesheet" href="./assets/css/style(1).css?v=5">
-    <link rel="stylesheet" href="./assets/css/custom.css?v=6">
+    <link rel="stylesheet" href="./assets/css/custom.css?v=7">
 
     <title>AAS Livestream – Phân tích chứng khoán cùng chuyên gia</title>
     <meta name="description" content="Xem livestream chứng khoán mỗi ngày cùng đội ngũ chuyên gia AAS. Phân tích thị trường, cập nhật dòng tiền, tư vấn danh mục – miễn phí, thực tế, dễ hiểu.">
@@ -47,12 +47,54 @@
                     <h1 class="heading mb-3"><span class="yellow-line">Lịch xem</span> livestream</h1>
                 </div>
             </div>
-            <!-- Hình ảnh Lịch Livestream trải dài -->
+            <!-- Lịch Livestream dựng bằng code (thay cho ảnh calendar.png / calendar_MOBILE.png) -->
             <div class="row mb-4">
-                <picture>
-                    <source media="(max-width: 767px)" srcset="./assets/images/calendar_MOBILE.png">
-                    <img src="./assets/images/calendar.png" alt="img" style="width: 100%;" data-aos="fade-up">
-                </picture>
+                <div class="col-12">
+                    <div class="live-schedule" data-aos="fade-up">
+                        <div class="ls-day">
+                            <p class="ls-dow">Thứ 3</p>
+                            <div class="ls-show">
+                                <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="17" rx="3"/><path d="M9 17l4-5 4 3 6-6"/><path d="M12 27h8M16 22v5"/></svg>
+                                <span><small>Bữa trưa <i>bên</i></small>Bảng điện</span>
+                            </div>
+                            <p class="ls-time">11h30 - 12h30</p>
+                        </div>
+                        <div class="ls-day">
+                            <p class="ls-dow">Thứ 4</p>
+                            <div class="ls-show">
+                                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h17v6a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2.5"/><path d="M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></svg>
+                                <span>Trà chiều<small>Chứng khoán</small></span>
+                            </div>
+                            <p class="ls-time">15h30 - 16h30</p>
+                        </div>
+                        <div class="ls-day">
+                            <p class="ls-dow">Thứ 5</p>
+                            <div class="ls-show">
+                                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12h17v6a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2.5"/><path d="M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></svg>
+                                <span>Trà chiều<small>Chứng khoán</small></span>
+                            </div>
+                            <p class="ls-time">15h30 - 16h30</p>
+                        </div>
+                        <div class="ls-day">
+                            <p class="ls-dow">Thứ 6</p>
+                            <div class="ls-show">
+                                <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="3"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg>
+                                <span><small>Tiêu điểm</small>Tuần</span>
+                            </div>
+                            <p class="ls-time">15h30 - 16h30</p>
+                        </div>
+                        <div class="ls-special">
+                            <span class="ls-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg>Số đặc biệt</span>
+                            <div class="ls-special-body">
+                                <div class="ls-show">
+                                    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 16a10 10 0 0 1-17.5 6.6"/><path d="M6 16A10 10 0 0 1 23.5 9.4"/><path d="M24 4v6h-6M8 28v-6h6"/></svg>
+                                    <span>Toàn cảnh<small>thị trường</small></span>
+                                </div>
+                                <p class="ls-period">Định kỳ<br>hằng tháng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Nút Kêu gọi hành động (Call To Action - Tham gia Zalo) -->
             <div class="row text-center mb-5" data-aos="fade-up">
@@ -72,28 +114,28 @@
             <div class="row g-5 mb-0" id="feature-boxes">
                 <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature text-center">
-                        <div class="icon mb-3"><img src="./assets/images/analysis.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <div class="icon mb-3"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="i-main" d="M22 9v17l12 15A17 17 0 1 1 22 9z"/><path class="i-main" d="M26 29h15a17 17 0 0 1-6 12z"/><path class="i-accent" d="M26 5a18 18 0 0 1 17 20H26z"/></svg></div>
                         <h3>Phân tích chuyên sâu</h3>
                         <p>diễn biến thị trường, cập nhật nhanh chóng.</p>
                     </div>
                 </div>
                 <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature text-center">
-                        <div class="icon mb-3"><img src="./assets/images/connect.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <div class="icon mb-3"><svg viewBox="0 0 48 48" aria-hidden="true"><g class="i-line"><path d="M24 23 13 14M24 23l12-12M24 23l13 5M24 23l5 13M24 23 12 35"/><circle cx="13" cy="13" r="4"/><circle cx="37" cy="9.5" r="4"/><circle cx="38.5" cy="28.5" r="3"/><circle cx="30" cy="37" r="3"/><circle cx="12" cy="35" r="5.5"/></g><circle class="i-accent" cx="24" cy="23" r="7"/></svg></div>
                         <h3>Kết nối trực tiếp</h3>
                         <p>đội ngũ chuyên gia giàu kinh nghiệm.</p>
                     </div>
                 </div>
                 <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature text-center">
-                        <div class="icon mb-3"><img src="./assets/images/companion.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <div class="icon mb-3"><svg viewBox="0 0 48 48" aria-hidden="true"><g class="i-line-accent"><circle cx="27" cy="15" r="8"/><path d="M27 23c5 0 10 1.5 14 4a3 3 0 0 1 1.5 2.6V37a3 3 0 0 1-3 3H37"/></g><circle class="i-main" cx="22" cy="14" r="8.5"/><path class="i-main" d="M7 31a3 3 0 0 1 1.5-2.6C12.5 26 17 24 22 24s9.5 2 13.5 4.4A3 3 0 0 1 37 31v6.5a3.5 3.5 0 0 1-3.5 3.5h-23A3.5 3.5 0 0 1 7 37.5z"/></svg></div>
                         <h3>Đồng hành</h3>
                         <p>trong mọi quyết định giao dịch của nhà đầu tư.</p>
                     </div>
                 </div>
                 <div class="col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature text-center">
-                        <div class="icon mb-3"><img src="./assets/images/exploit.png" alt="img" style="width: 80px; height: auto;"></div>
+                        <div class="icon mb-3"><svg viewBox="0 0 48 48" aria-hidden="true"><rect class="i-main" x="6" y="25" width="9.5" height="15" rx="1.5"/><rect class="i-main" x="19" y="20" width="9.5" height="20" rx="1.5"/><rect class="i-accent" x="32" y="15" width="9.5" height="25" rx="1.5"/><path class="i-line" d="M7.5 18.5 34 9"/><path class="i-line" d="m29 5.5 5.5 3.3-2 6"/></svg></div>
                         <h3>Khai thác hiệu quả</h3>
                         <p>các công cụ đầu tư chuyên biệt của AAS.</p>
                     </div>

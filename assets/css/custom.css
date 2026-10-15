@@ -1050,3 +1050,211 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
         padding: 2px 10px;
     }
 }
+
+/* Lịch Livestream (code thay ảnh): khung Deep Blue, thẻ theo ngày, khối Số đặc biệt */
+.live-schedule {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.6fr);
+    gap: 14px;
+    align-items: stretch;
+    padding: 18px;
+    border-radius: 20px;
+    background:
+        radial-gradient(ellipse at 90% 0%, rgba(140, 198, 63, 0.18), transparent 50%),
+        linear-gradient(135deg, #17284F, #203567 60%, #2a4483);
+    box-shadow: 0 12px 30px rgba(32, 53, 103, 0.25);
+    color: #fff;
+}
+.ls-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.07);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.ls-day:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+}
+.ls-dow {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.1;
+    color: #fff;
+}
+.ls-show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.05;
+    text-transform: none;
+    text-align: left;
+    color: #fff;
+}
+.ls-show small {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+}
+.ls-show small i {
+    font-size: 9px;
+    font-style: normal;
+    vertical-align: top;
+}
+.ls-show svg {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #8CC63F;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.ls-time {
+    margin: auto 0 0;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #8CC63F;
+    color: #203567;
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.ls-special {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px dashed rgba(140, 198, 63, 0.6);
+    border-radius: 14px;
+}
+.ls-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    padding: 6px 16px 6px 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff3d3d, #e8336b);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(232, 51, 107, 0.35);
+}
+.ls-badge svg {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+    stroke: none;
+}
+.ls-badge svg path {
+    fill: #e8336b;
+}
+.ls-special-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.ls-special-body .ls-show {
+    justify-content: flex-start;
+    padding-right: 12px;
+    border-right: 2px solid #8CC63F;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.ls-special-body .ls-show small {
+    font-size: 15px;
+    font-weight: 800;
+}
+.ls-special-body .ls-show span {
+    white-space: nowrap;
+}
+.ls-period {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #d8e3ef;
+}
+@media (max-width: 991.98px) {
+    .live-schedule {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .ls-special {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ls-badge {
+        align-self: center;
+    }
+}
+@media (max-width: 575.98px) {
+    .live-schedule {
+        gap: 10px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+    .ls-day {
+        padding: 12px 6px 14px;
+    }
+    .ls-dow {
+        font-size: 19px;
+    }
+    .ls-show {
+        font-size: 15px;
+    }
+    .ls-show svg {
+        width: 26px;
+        height: 26px;
+    }
+    .ls-time {
+        font-size: 13px;
+        padding: 3px 10px;
+    }
+    .ls-special {
+        justify-content: center;
+    }
+}
+
+/* 4 icon tính năng dựng bằng SVG theo màu AAS */
+.feature .icon svg {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.4s ease;
+}
+.feature:hover .icon svg {
+    transform: scale(1.1) translateY(-3px);
+}
+.feature .icon .i-main {
+    fill: #203567;
+}
+.feature .icon .i-accent {
+    fill: #8CC63F;
+}
+.feature .icon .i-line,
+.feature .icon .i-line-accent {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.feature .icon .i-line {
+    stroke: #203567;
+}
+.feature .icon .i-line-accent {
+    stroke: #8CC63F;
+}
