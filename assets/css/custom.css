@@ -744,47 +744,49 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     50% { transform: translateY(-12px); }
 }
 
-/* Thu nhỏ trên Mobile */
+/* Mobile: bỏ box nổi đè lên ảnh, xếp ảnh trên - bình luận dưới thành danh sách dễ đọc */
 @media (max-width: 767.98px) {
     .talk-slider .talk-slide-content {
-        margin: 20px 60px 20px 50px; /* Cập nhật lề để hình ảnh to ra một chút */
+        margin: 0 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
+    .talk-slider .talk-slide-content > img {
+        margin-bottom: 4px;
+    }
+    .talk-slider .float-box,
     .talk-slider .left-box,
     .talk-slider .right-box {
-        width: 130px; /* Nhỏ lại để box gọn gàng hơn */
-        min-height: 40px;
-    }
-    .talk-slider .left-box {
-        left: -30px; 
-    }
-    .talk-slider .right-box {
-        right: -30px;
+        position: static;
+        width: 100%;
+        min-height: 0;
+        transform: none;
     }
     .talk-slider .float-box-anim {
-        padding: 4px; 
-        border-radius: 6px;
-        border-width: 1px; 
-        box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* Giảm bóng đổ */
+        animation: none;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #DDE5E1;
+        box-shadow: 0 2px 8px rgba(32, 53, 103, 0.08);
     }
     .talk-slider .cmt-header {
-        margin-bottom: 3px;
+        margin-bottom: 4px;
     }
     .talk-slider .cmt-avatar {
-        width: 16px;
-        height: 16px;
-        font-size: 8px;
-        margin-right: 4px;
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
     }
     .talk-slider .cmt-name {
-        font-size: 8px; /* Chữ nhỏ lại, hài hòa với box */
+        font-size: 13px;
     }
     .talk-slider .cmt-text {
-        font-size: 8px;
-        line-height: 1.2;
+        font-size: 14px;
+        line-height: 1.45;
     }
     .talk-slider .float-box:hover .float-box-anim {
-        transform: scale(1.04) !important; /* Zoom nhẹ hơn trên mobile để tránh tràn */
-        box-shadow: 0 4px 10px rgba(32, 53, 103, 0.2);
+        transform: none !important;
     }
 }
 /* Footer AAS (code thay cho ảnh): nền Deep Blue, chữ trắng, icon xanh lá AAS */
@@ -1290,5 +1292,43 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
     .ls-show .ls-logo[src*="bua-trua"] {
         height: 36px;
+    }
+}
+
+/* Thẻ chuyên gia trên tablet/mobile: tên to nhất, chức danh nhỏ hơn, thẻ cao theo nội dung */
+@media (max-width: 991.98px) {
+    .experts-grid {
+        grid-auto-rows: auto;
+    }
+    .experts-grid .service.d-flex {
+        align-items: flex-start;
+    }
+    .experts-grid .service .text h2 {
+        font-size: 17px !important;
+        margin-bottom: 4px;
+        color: #203567;
+    }
+    .experts-grid .service .text h3 {
+        font-size: 14px !important;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #669F3F;
+        margin-bottom: 8px;
+    }
+    .experts-grid .service .text p {
+        font-size: 14px !important;
+        line-height: 1.55;
+    }
+}
+@media (max-width: 575.98px) {
+    .experts-grid .service.d-flex {
+        gap: 12px;
+        padding: 16px;
+    }
+    .experts-grid .service.d-flex > div:last-child {
+        flex: 0 0 84px;
+    }
+    .experts-grid .service.d-flex img {
+        max-width: 84px;
     }
 }

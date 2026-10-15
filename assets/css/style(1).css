@@ -1381,8 +1381,7 @@ textarea.form-control {
 .bg-light {
   width: 100%;
   height: auto;
-  background: url("../images/bg-light.png") no-repeat center center;
-  background-size: cover;
+  background: transparent;
 }
 
 .bg-white {
