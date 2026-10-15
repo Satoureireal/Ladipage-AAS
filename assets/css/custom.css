@@ -1055,7 +1055,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 /* Lịch Livestream (code thay ảnh): khung Deep Blue, thẻ theo ngày, khối Số đặc biệt */
 .live-schedule {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.6fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.4fr);
     gap: 14px;
     align-items: stretch;
     padding: 18px;
@@ -1192,7 +1192,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 }
 @media (max-width: 991.98px) {
     .live-schedule {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .ls-special {
         grid-column: 1 / -1;
@@ -1329,5 +1329,15 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
     }
     .experts-grid .service.d-flex img {
         max-width: 84px;
+    }
+}
+
+/* Lịch còn 3 ngày: mobile xếp 2 cột, ô thứ 3 trải hết hàng */
+@media (max-width: 575.98px) {
+    .live-schedule {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .live-schedule .ls-day:nth-child(3) {
+        grid-column: 1 / -1;
     }
 }
