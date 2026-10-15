@@ -1245,16 +1245,47 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, textarea {
 .feature .icon .i-accent {
     fill: #8CC63F;
 }
-.feature .icon .i-line,
-.feature .icon .i-line-accent {
+.feature .icon .i-stroke,
+.feature .icon .i-stroke-accent {
     fill: none;
-    stroke-width: 3.5;
+    stroke-width: 84;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-.feature .icon .i-line {
+.feature .icon .i-stroke {
     stroke: #203567;
 }
-.feature .icon .i-line-accent {
+.feature .icon .i-stroke-accent {
     stroke: #8CC63F;
+    stroke-width: 86;
+}
+.feature .icon .i-arrow {
+    stroke-width: 128;
+    stroke-linecap: butt;
+}
+
+/* Logo chương trình (ảnh) trong lịch livestream */
+.ls-show .ls-logo {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 58px;
+    object-fit: contain;
+}
+.ls-special-body .ls-show {
+    text-transform: none;
+}
+.ls-special-body .ls-logo {
+    height: 60px;
+}
+.ls-show .ls-logo[src*="bua-trua"] {
+    height: 44px;
+}
+@media (max-width: 575.98px) {
+    .ls-show .ls-logo {
+        height: 48px;
+    }
+    .ls-show .ls-logo[src*="bua-trua"] {
+        height: 36px;
+    }
 }
